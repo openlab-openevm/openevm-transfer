@@ -1,0 +1,29 @@
+{
+  "name": "neon-transfer-ethers",
+  "version": "1.1.0",
+  "description": "Neon token transfer example with ethers.js",
+  "main": "src/index.ts",
+  "private": true,
+  "scripts": {
+    "test": "yarn tests",
+    "start": "npx nodemon"
+  },
+  "workspaces": [
+    "../../packages/*"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "@neonevm/token-transfer-core": "4.4.2",
+    "@neonevm/token-transfer-ethers": "4.4.2",
+    "big.js": "^6.2.1",
+    "bn.js": "^5.2.1",
+    "ethers": "^6.13.2"
+  },
+  "devDependencies": {
+    "@types/big.js": "^6.2.2",
+    "@types/bn.js": "^5.1.5",
+    "nodemon": "^3.0.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}

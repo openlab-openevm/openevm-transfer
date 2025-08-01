@@ -1,0 +1,62 @@
+{
+  "name": "ist-token-transfer-webthree",
+  "version": "1.0.2",
+  "description": "Neon EVM token transfer methods leveraging the web3.js library",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "compile": "tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.types.json",
+    "build": "npm-run-all build:clean compile && echo '{\"type\": \"module\"}' > ./dist/esm/package.json",
+    "build:clean": "rm -rf ./dist",
+    "prepack": "npm run build",
+    "lint": "eslint ./dist",
+    "audit": "npm audit",
+    "typedoc": "npx typedoc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neonlabsorg/neon-client-transfer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/neonlabsorg/neon-client-transfer/issues"
+  },
+  "homepage": "https://github.com/neonlabsorg/neon-client-transfer#readme",
+  "license": "ISC",
+  "dependencies": {
+    "@solana/spl-token": "^0.4.13",
+    "@solana/web3.js": "^1.98.2",
+    "web3-core": "^4.7.1",
+    "web3-eth": "^4.11.1",
+    "web3-eth-accounts": "^4.3.1",
+    "web3-eth-contract": "^4.7.2",
+    "web3-types": "^1.10.0",
+    "web3-utils": "^4.3.3"
+  },
+  "peerDependencies": {
+    "@neonevm/token-transfer-core": "4.4.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^8.32.1",
+    "eslint": "9.27.0",
+    "eslint-plugin-prettier": "^5.4.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "3.5.3",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.8.3"
+  },
+  "gitHead": "b1a09fa5f8d6b82ba48b40875add4805120c0b25"
+}
